@@ -1,5 +1,5 @@
 /*!
- * omit-key <https://github.com/jonschlinkert/omit-key>
+ * object-omit <https://github.com/jonschlinkert/object-omit>
  *
  * Copyright (c) 2014 Jon Schlinkert, contributors.
  * Licensed under the MIT License
@@ -8,7 +8,7 @@
 'use strict';
 
 var isObject = require('isobject');
-var difference = require('array-difference');
+var difference = require('arr-diff');
 
 module.exports = function omit(obj, keys) {
   if (!isObject(obj)) {

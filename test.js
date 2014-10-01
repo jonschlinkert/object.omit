@@ -1,5 +1,5 @@
 /*!
- * omit-key <https://github.com/jonschlinkert/omit-key>
+ * object-omit <https://github.com/jonschlinkert/object-omit>
  *
  * Copyright (c) 2014 Jon Schlinkert, contributors.
  * Licensed under the MIT License
