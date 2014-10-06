@@ -1,5 +1,5 @@
 /*!
- * object-omit <https://github.com/jonschlinkert/object-omit>
+ * omit-keys <https://github.com/jonschlinkert/omit-keys>
  *
  * Copyright (c) 2014 Jon Schlinkert, contributors.
  * Licensed under the MIT License
@@ -8,26 +8,31 @@
 'use strict';
 
 var isObject = require('isobject');
-var difference = require('arr-diff');
+var forOwn = require('for-own');
 
-module.exports = function omit(obj, keys) {
-  if (!isObject(obj)) {
+module.exports = function omit(obj, props) {
+  if (obj == null || !isObject(obj)) {
     return {};
   }
 
-  var props = Object.keys(obj);
-  var len = props.length;
+  if (props == null) {
+    return obj;
+  }
 
-  keys = Array.isArray(keys) ? keys : [keys];
-  var diff = difference(props, keys);
+  if (typeof props === 'string') {
+    props = [].slice.call(arguments, 1);
+  }
+
   var o = {};
 
-  for (var i = 0; i < len; i++) {
-    var key = diff[i];
-
-    if (obj.hasOwnProperty(key)) {
-      o[key] = obj[key];
-    }
+  if (!Object.keys(obj).length) {
+    return o;
   }
+
+  forOwn(obj, function (value, key) {
+    if (props.indexOf(key) === -1) {
+      o[key] = value;
+    }
+  });
   return o;
 };

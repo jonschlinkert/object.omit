@@ -1,5 +1,5 @@
 /*!
- * object-omit <https://github.com/jonschlinkert/object-omit>
+ * omit-keys <https://github.com/jonschlinkert/omit-keys>
  *
  * Copyright (c) 2014 Jon Schlinkert, contributors.
  * Licensed under the MIT License
@@ -21,6 +21,10 @@ describe('.omit()', function () {
 
   it('should return the object if no keys are specified.', function () {
     omit({a: 'a', b: 'b', c: 'c'}).should.eql({a: 'a', b: 'b', c: 'c'});
+  });
+
+  it('should return an empty object if the first arg is not an object.', function () {
+    omit(null, {a: 'a', b: 'b', c: 'c'}).should.eql({});
   });
 
   it('should return an empty object if no object is specified.', function () {

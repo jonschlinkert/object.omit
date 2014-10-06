@@ -1,7 +1,7 @@
 {
   "name": "object-omit",
   "description": "Return a copy of an object without the given keys.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/jonschlinkert/object-omit",
   "author": {
     "name": "Jon Schlinkert",
@@ -33,22 +33,28 @@
     "mocha": "*"
   },
   "keywords": [
-    "JavaScript",
-    "Lo-Dash",
-    "Underscore",
+    "clean",
+    "clear",
+    "copy",
+    "dash",
+    "delete",
+    "javascript",
     "js",
     "key",
+    "lo",
+    "lo-dash",
     "lodash",
     "object",
     "omit",
     "property",
     "remove",
+    "underscore",
     "util",
     "utilities",
     "utils"
   ],
   "dependencies": {
-    "arr-diff": "^0.1.0",
+    "for-own": "^0.1.1",
     "isobject": "^0.2.0"
   }
 }
