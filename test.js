@@ -7,6 +7,7 @@
 
 'use strict';
 
+/* deps:mocha */
 var should = require('should');
 var omit = require('./');
 
