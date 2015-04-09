@@ -1,8 +1,8 @@
 /*!
  * object.omit <https://github.com/jonschlinkert/object.omit>
  *
- * Copyright (c) 2014-2015 Jon Schlinkert.
- * Licensed under the MIT License
+ * Copyright (c) 2014-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
  */
 
 'use strict';

@@ -1,25 +1,23 @@
 {
-  "name": "object-omit",
+  "name": "object.omit",
   "description": "Return a copy of an object without the given key, or array of keys.",
   "version": "1.0.0",
-  "homepage": "https://github.com/jonschlinkert/object-omit",
+  "homepage": "https://github.com/jonschlinkert/object.omit",
   "author": {
     "name": "Jon Schlinkert",
     "url": "https://github.com/jonschlinkert"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jonschlinkert/object-omit.git"
+    "url": "git://github.com/jonschlinkert/object.omit.git"
   },
   "bugs": {
-    "url": "https://github.com/jonschlinkert/object-omit/issues"
+    "url": "https://github.com/jonschlinkert/object.omit/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/jonschlinkert/object-omit/blob/master/LICENSE"
-    }
-  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/object.omit/blob/master/LICENSE"
+  },
   "files": [
     "index.js"
   ],
