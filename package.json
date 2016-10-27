@@ -1,7 +1,7 @@
 {
   "name": "object.omit",
   "description": "Return a copy of an object excluding the given key, or array of keys. Also accepts an optional filter function as the last argument.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "homepage": "https://github.com/jonschlinkert/object.omit",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/object.omit",
