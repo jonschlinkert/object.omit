@@ -16,9 +16,18 @@ describe('.omit()', function () {
     omit({a: 'a', b: 'b', c: 'c'}, 'a').should.eql({ b: 'b', c: 'c' });
   });
 
-  it('should omit the given keys from the object.', function () {
+  it('should omit the given keys as array from the object.', function () {
     omit({a: 'a', b: 'b', c: 'c'}, ['a', 'c']).should.eql({ b: 'b' });
   });
+
+  it('should omit the given keys as arrays from the object.', function () {
+    omit({a: 'a', b: 'b', c: 'c'}, ['a'], ['b', 'c']).should.eql({});
+  });
+
+  it('should omit the given keys as parameters from the object.', function () {
+    omit({a: 'a', b: 'b', c: 'c'}, 'a', 'c').should.eql({ b: 'b' });
+  });
+
 
   it('should return the object if no keys are specified.', function () {
     omit({a: 'a', b: 'b', c: 'c'}).should.eql({a: 'a', b: 'b', c: 'c'});
