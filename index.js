@@ -8,7 +8,6 @@
 'use strict';
 
 var isObject = require('is-extendable');
-var forOwn = require('for-own');
 
 module.exports = function omit(obj, keys) {
   if (!isObject(obj)) return {};
@@ -26,13 +25,13 @@ module.exports = function omit(obj, keys) {
     return obj;
   }
 
-  forOwn(obj, function(value, key) {
+  Object.keys(obj).forEach(function(key) {
     if (keys.indexOf(key) === -1) {
 
       if (!isFunction) {
-        res[key] = value;
-      } else if (fn(value, key, obj)) {
-        res[key] = value;
+        res[key] = obj[key];
+      } else if (fn(obj[key], key, obj)) {
+        res[key] = obj[key];
       }
     }
   });

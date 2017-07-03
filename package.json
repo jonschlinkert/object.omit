@@ -20,7 +20,6 @@
     "test": "mocha"
   },
   "dependencies": {
-    "for-own": "^0.1.4",
     "is-extendable": "^0.1.1"
   },
   "devDependencies": {
