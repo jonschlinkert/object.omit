@@ -1,40 +1,37 @@
 /*!
  * object.omit <https://github.com/jonschlinkert/object.omit>
  *
- * Copyright (c) 2014-2015, Jon Schlinkert.
- * Licensed under the MIT License.
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
  */
 
 'use strict';
 
 var isObject = require('is-extendable');
-var forOwn = require('for-own');
 
-module.exports = function omit(obj, keys) {
+module.exports = function omit(obj, props, fn) {
   if (!isObject(obj)) return {};
 
-  keys = [].concat.apply([], [].slice.call(arguments, 1));
-  var last = keys[keys.length - 1];
-  var res = {}, fn;
+  if (typeof props === 'function') {
+    fn = props;
+    props = [];
+  }
 
-  if (typeof last === 'function') {
-    fn = keys.pop();
+  if (typeof props === 'string') {
+    props = [props];
   }
 
   var isFunction = typeof fn === 'function';
-  if (!keys.length && !isFunction) {
-    return obj;
-  }
+  var keys = Object.keys(obj);
+  var res = {};
 
-  forOwn(obj, function(value, key) {
-    if (keys.indexOf(key) === -1) {
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    var val = obj[key];
 
-      if (!isFunction) {
-        res[key] = value;
-      } else if (fn(value, key, obj)) {
-        res[key] = value;
-      }
+    if (!props || (props.indexOf(key) === -1 && (!isFunction || fn(val, key, obj)))) {
+      res[key] = val;
     }
-  });
+  }
   return res;
 };
