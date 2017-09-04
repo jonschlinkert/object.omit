@@ -1,7 +1,7 @@
 {
   "name": "object.omit",
   "description": "Return a copy of an object excluding the given key, or array of keys. Also accepts an optional filter function as the last argument.",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "homepage": "https://github.com/jonschlinkert/object.omit",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
@@ -24,7 +24,6 @@
     "test": "mocha"
   },
   "dependencies": {
-    "for-own": "^1.0.0",
     "is-extendable": "^1.0.0"
   },
   "devDependencies": {
@@ -61,10 +60,6 @@
     ],
     "lint": {
       "reflinks": true
-    },
-    "reflinks": [
-      "verb",
-      "verb-generate-readme"
-    ]
+    }
   }
 }
