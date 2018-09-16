@@ -1,6 +1,6 @@
 function omit(
   obj: object,
-  props: string[],
+  props: string | string[],
   fn?: (val, key: string, obj: object) => boolean
 ): object;
 
